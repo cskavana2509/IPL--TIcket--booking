@@ -1,10 +1,7 @@
-// ===============================
-// IPL Vault — Dynamic Booking Logic
-// ===============================
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Price + info lookup for each seating category
     const stands = {
         "balcony": {
             label: "Balcony",
@@ -44,8 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return "₹" + amount.toLocaleString("en-IN");
     }
 
-    // Reliable way to read <input type="number">; falls back to Number()
-    // for older browsers that don't support valueAsNumber.
     function getTicketQty() {
         const raw = ticketsInput.valueAsNumber;
         if (Number.isFinite(raw) && raw > 0) return Math.floor(raw);

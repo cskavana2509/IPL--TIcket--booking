@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -956,7 +955,6 @@ nav a:hover {
     font-size: 14px;
 }
 
-
 .auth-field input:focus {
     border-color: #ffcc00;
 }
@@ -993,7 +991,6 @@ nav a:hover {
     box-shadow:
         0 10px 25px rgba(255, 204, 0, 0.2);
 }
-
 
 .auth-footer {
     text-align: center;
