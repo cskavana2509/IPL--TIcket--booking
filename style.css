@@ -1029,3 +1029,96 @@ nav a:hover {
     font-size: 12.5px;
     font-weight: normal;
 }
+/* =========================================================
+   MY TICKET BOOKINGS
+   ========================================================= */
+
+.bookings-section {
+    padding: 90px 7%;
+    background: #080b18;
+}
+
+
+.bookings-table-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    background: #11162a;
+
+    border: 1px solid #343b5d;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    overflow-x: auto;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+
+.bookings-table th {
+    background: #0c1022;
+
+    color: #ffcc00;
+
+    padding: 16px 12px;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #343b5d;
+}
+
+
+.bookings-table td {
+    padding: 15px 12px;
+
+    color: #d8dbea;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #242943;
+}
+
+
+.bookings-table tbody tr:hover {
+    background: #151a31;
+}
+
+
+.bookings-table td:last-child {
+    white-space: nowrap;
+}
+
+
+.bookings-table td[colspan="7"] {
+    text-align: center;
+
+    color: #9298ae;
+
+    padding: 35px;
+}
+
+
+@media (max-width: 600px) {
+
+    .bookings-section {
+        padding: 60px 5%;
+    }
+
+    .bookings-table-wrapper {
+        padding: 15px;
+    }
+
+}
