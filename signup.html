@@ -1,4 +1,3 @@
-
 <html lang="en">
 
 <head>
@@ -61,7 +60,7 @@
             </p>
 
 
-            <form action="#" method="post">
+            <form id="signupForm" action="#" method="post" novalidate>
 
 
                 <div class="auth-field">
@@ -77,6 +76,7 @@
                         placeholder="Enter username"
                         required
                     >
+                    <span class="error-message" id="usernameError"></span>
 
                 </div>
 
@@ -95,6 +95,7 @@
                         placeholder="Enter your full name"
                         required
                     >
+                    <span class="error-message" id="nameError"></span>
 
                 </div>
 
@@ -111,6 +112,7 @@
                         placeholder="Enter mobile number"
                         required
                     >
+                    <span class="error-message" id="mobileError"></span>
 
                 </div>
 
@@ -128,6 +130,7 @@
                         placeholder="Enter your email"
                         required
                     >
+                    <span class="error-message" id="emailError"></span>
 
                 </div>
 
@@ -146,6 +149,7 @@
                         placeholder="Create a password"
                         required
                     >
+                    <span class="error-message" id="passwordError"></span>
 
                 </div>
 
@@ -176,7 +180,8 @@
 
     </main>
 
+    <script src="validation.js"></script>
+
 </body>
 
 </html>
-

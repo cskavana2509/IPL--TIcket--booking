@@ -1010,3 +1010,22 @@ nav a:hover {
 
     font-weight: bold;
 }
+
+
+.auth-field input.input-error {
+    border-color: #ff4d4d;
+    background: #1a0e12;
+}
+
+.auth-field input.input-error:focus {
+    border-color: #ff4d4d;
+}
+
+.error-message {
+    display: block;
+    min-height: 16px;
+    margin-top: 6px;
+    color: #ff6b6b;
+    font-size: 12.5px;
+    font-weight: normal;
+}
