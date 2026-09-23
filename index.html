@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- HEADER -->
+    
 
     <header class="header">
 
@@ -38,6 +38,8 @@
             <a href="#teams">Teams</a>
 
             <a href="#venues">Venues</a>
+
+            <a href="#schedule">Schedule</a>
 
             <a href="#tickets">Book Tickets</a>
 
@@ -259,6 +261,34 @@
     </section>
 
 
+    <!-- MATCH SCHEDULE -->
+
+    <section id="schedule" class="schedule-section">
+
+        <div class="section-heading">
+            <p>MATCH SCHEDULE</p>
+            <h2>Upcoming Matches</h2>
+            <span>Pick a match and jump straight to booking.</span>
+        </div>
+
+        <div class="bookings-table-wrapper">
+            <table class="bookings-table schedule-table">
+                <thead>
+                    <tr>
+                        <th>Match</th>
+                        <th>Venue</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleTableBody"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+
     <!-- TICKET BOOKING -->
 
     <section id="tickets" class="ticket-section">
@@ -287,7 +317,7 @@
                 </p>
 
 
-                <form id="bookingForm">
+                <form id="bookingForm" novalidate>
 
 
                     <div class="form-group">
@@ -296,33 +326,8 @@
                             Select Match
                         </label>
 
-                        <select id="match" name="match" required>
-
-                            <option value="">
-                                -- Select Match --
-                            </option>
-
-                            <option value="MI vs RCB — Wankhede Stadium, Mumbai">
-                                MI vs RCB — Wankhede Stadium, Mumbai
-                            </option>
-
-                            <option value="CSK vs KKR — M. A. Chidambaram Stadium, Chennai">
-                                CSK vs KKR — M. A. Chidambaram Stadium, Chennai
-                            </option>
-
-                            <option value="GT vs SRH — Narendra Modi Stadium, Ahmedabad">
-                                GT vs SRH — Narendra Modi Stadium, Ahmedabad
-                            </option>
-
-                            <option value="RCB vs KKR — M. Chinnaswamy Stadium, Bengaluru">
-                                RCB vs KKR — M. Chinnaswamy Stadium, Bengaluru
-                            </option>
-
-                            <option value="DC vs PBKS — Eden Gardens, Kolkata">
-                                DC vs PBKS — Eden Gardens, Kolkata
-                            </option>
-
-                        </select>
+                        <select id="match" name="match"></select>
+<span class="error-message" id="matchError"></span>
 
                     </div>
 
@@ -342,6 +347,7 @@
                             placeholder="Enter number of tickets"
                             required
                         >
+<span class="error-message" id="ticketCountError"></span>
 
                     </div>
 
@@ -352,33 +358,8 @@
                             Select Seating Category
                         </label>
 
-                        <select id="category" name="category" required>
-
-                            <option value="">
-                                -- Select Category --
-                            </option>
-
-                            <option value="balcony">
-                                Balcony — ₹1,500
-                            </option>
-
-                            <option value="box-balcony">
-                                Box Balcony — ₹2,500
-                            </option>
-
-                            <option value="luxury-balcony">
-                                Luxury Balcony — ₹4,000
-                            </option>
-
-                            <option value="ground">
-                                Ground — ₹1,000
-                            </option>
-
-                            <option value="first-class">
-                                1st Class — ₹6,000
-                            </option>
-
-                        </select>
+                        <select id="category" name="category"></select>
+<span class="error-message" id="categoryError"></span>
 
                     </div>
 
@@ -393,6 +374,8 @@
 
 
             <div class="summary-column">
+
+                <div class="confirmation" id="bookingConfirmation" hidden></div>
 
                 <div class="booking-summary" id="bookingSummary">
 
@@ -429,6 +412,19 @@
         </div>
 
 
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label for="filterMatch">Filter by match</label>
+                <select id="filterMatch"></select>
+            </div>
+            <div class="filter-group">
+                <label for="filterStand">Filter by stand</label>
+                <select id="filterStand"></select>
+            </div>
+            <button type="button" class="filter-clear" id="clearFilters">Clear filters</button>
+            <p class="filter-count" id="bookingCount"></p>
+        </div>
+
         <div class="bookings-table-wrapper">
 
             <table class="bookings-table">
@@ -451,6 +447,8 @@
 
                         <th>Booked On</th>
 
+                        <th>Action</th>
+
                     </tr>
 
                 </thead>
@@ -460,7 +458,7 @@
 
                     <tr>
 
-                        <td colspan="7">
+                        <td colspan="8">
                             No bookings yet. Book your first IPL ticket!
                         </td>
 
@@ -568,6 +566,7 @@
     </footer>
 
 
+    <script src="validation.js"></script>
     <script src="script.js"></script>
 
 </body>

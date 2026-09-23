@@ -44,6 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return "";
         },
+        match(value) {
+            return value ? "" : "Please select a match.";
+        },
+        tickets(value) {
+            const n = Number(value);
+            if (!String(value).trim()) return "Enter the number of tickets.";
+            if (!Number.isInteger(n) || n < 1 || n > 10) {
+                return "Tickets must be a whole number from 1 to 10.";
+            }
+            return "";
+        },
+        category(value) {
+            return value ? "" : "Please select a seating category.";
+        },
         password(value) {
             if (!value) return "Password is required.";
             if (value.length < 6) return "Password must be at least 6 characters.";
@@ -63,6 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
         clearError(input);
         return true;
     }
+
+    // Shared with script.js (booking form)
+    window.FormValidation = { validateField, clearError };
 
     function wireForm(form) {
         if (!form) return;
