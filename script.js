@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const BOOKINGS_KEY = "iplVaultBookings";
     const SESSION_KEY = "iplVaultCurrentBooking";
 
-
     const $ = (id) => document.getElementById(id);
 
     const matchSelect = $("match");
@@ -57,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const { validateField, clearError } = window.FormValidation;
 
-
+    
 
     const formatINR = (amount) => "₹" + amount.toLocaleString("en-IN");
     const matchLabel = (m) => `${m.teams} — ${m.venue}`;
@@ -114,8 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return `<div class="summary-row ${extraClass}"><span>${label}</span><span>${value}</span></div>`;
     }
 
-    
-
     function renderSchedule() {
         scheduleBody.innerHTML = "";
 
@@ -145,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ticketsInput.focus({ preventScroll: true });
     });
 
-    
+
 
     function saveSessionBooking() {
         writeStorage(sessionStorage, SESSION_KEY, {
@@ -164,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
         categorySelect.value = draft.category || "";
     }
 
-    /* ======================= LIVE SUMMARY ========================= */
+    
 
     function updateBookingSummary() {
         const match = findMatch(matchSelect.value);
@@ -196,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
             : "";
     }
 
-
+    
     function onFormChange(event) {
         const field = event && event.target;
         if (field && field.classList.contains("input-error")) validateField(field);
@@ -205,7 +202,6 @@ document.addEventListener("DOMContentLoaded", () => {
         saveSessionBooking();
     }
 
-    
 
     const getBookings = () => readStorage(localStorage, BOOKINGS_KEY, []);
 
@@ -300,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displayBookings();
     }
 
-
+    
 
     function validateBookingForm() {
         const results = formFields.map((field) => validateField(field));
@@ -309,6 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (firstInvalid) firstInvalid.focus();
         return !firstInvalid;
     }
+
 
 
     formFields.forEach((field) => {
@@ -347,7 +344,6 @@ document.addEventListener("DOMContentLoaded", () => {
         displayBookings();
     });
 
-    
 
     const matchOptions = MATCHES.map((m) => ({ value: m.id, label: matchLabel(m) }));
     const standOptions = Object.values(STANDS).map((s) => ({ value: s.label, label: s.label }));

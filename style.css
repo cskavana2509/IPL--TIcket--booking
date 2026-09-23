@@ -1029,7 +1029,9 @@ nav a:hover {
     font-size: 12.5px;
     font-weight: normal;
 }
-
+/* =========================================================
+   MY TICKET BOOKINGS
+   ========================================================= */
 
 .bookings-section {
     padding: 90px 7%;
@@ -1122,7 +1124,9 @@ nav a:hover {
 
 }
 
-
+/* =========================================================
+   SCHEDULE, FILTERS, CONFIRMATION, BOOKING-FORM ERRORS
+   ========================================================= */
 
 .schedule-section { padding: 90px 7%; background: #0c1022; }
 .schedule-table { min-width: 700px; }
